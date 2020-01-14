@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="487.0" prefWidth="400.0" stylesheets="@../css/movierental.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.addingmember.MemberAddController">
+   <children>
+      <VBox prefHeight="526.0" prefWidth="449.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="idC" editable="false" layoutX="50.0" layoutY="69.0" promptText="ID" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: black;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="nameTf" promptText="Name" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: black;">
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="phoneTf" promptText="Phone Number" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: black;">
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="emailTf" promptText="Email" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: black;">
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <HBox prefHeight="42.0" prefWidth="449.0">
+               <children>
+                  <RadioButton fx:id="femaleRadio" mnemonicParsing="false" selected="true" text="Female" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="40.0" top="15.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="maleRadio" mnemonicParsing="false" text="Male" textFill="WHITE" toggleGroup="$gender">
+                     <HBox.margin>
+                        <Insets left="15.0" top="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <DatePicker fx:id="datePicker" prefHeight="34.0" prefWidth="234.0" promptText="Date Of Birth(dd/MM/yyyy)" style="-fx-font-size: 14px; -fx-background-color: transparent;">
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" top="10.0" />
+               </VBox.margin>
+            </DatePicker>
+            <TextArea fx:id="addressTa" prefHeight="116.0" prefWidth="393.0" promptText="Address" wrapText="true">
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="383.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleSave" prefHeight="30.0" prefWidth="70.0" text="Save">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="70.0" text="Cancel">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

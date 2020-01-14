@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="308.0" prefWidth="514.0" stylesheets="@../css/movierental.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.settings.SettingsController">
+   <children>
+      <VBox prefHeight="424.0" prefWidth="449.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="52.0" prefWidth="449.0">
+               <children>
+                  <Button layoutX="438.0" mnemonicParsing="false" onAction="#homePage" prefHeight="36.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Icons/left-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="48.0" prefWidth="449.0">
+               <children>
+                  <Label layoutX="71.0" layoutY="25.0" text="Set movie price" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cost" layoutX="170.0" layoutY="19.0" prefHeight="32.0" prefWidth="175.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="62.0" prefHeight="48.0" prefWidth="449.0">
+               <children>
+                  <Label layoutX="37.0" layoutY="25.0" text="Set maximum movies" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="maxRented" layoutX="170.0" layoutY="18.0" prefHeight="32.0" prefWidth="175.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="110.0" prefHeight="48.0" prefWidth="449.0">
+               <children>
+                  <Button layoutX="170.0" layoutY="22.0" mnemonicParsing="false" onAction="#loadChangePassword" prefHeight="25.0" prefWidth="175.0" text="Chandge Password">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" prefHeight="113.0" prefWidth="514.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleSave" prefHeight="30.0" prefWidth="70.0" text="Save">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="70.0" text="Cancel">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

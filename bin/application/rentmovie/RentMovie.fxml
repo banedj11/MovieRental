@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" prefHeight="492.0" prefWidth="1022.0" stylesheets="@../css/movierental.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.rentmovie.RentMovieController">
+   <children>
+      <VBox layoutX="198.0" layoutY="112.0" prefHeight="492.0" prefWidth="1022.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="73.0" prefWidth="1022.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="199.0" text="Movie Rental ">
+                     <font>
+                        <Font name="System Bold Italic" size="27.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fitHeight="48.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Icons/clapperboard.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="774.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="backBtn" mnemonicParsing="false" onAction="#homePage" prefHeight="36.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Icons/left-arrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="1022.0">
+               <children>
+                  <Pane fx:id="slidingPane" prefHeight="32.0" prefWidth="418.0">
+                     <children>
+                        <Label fx:id="lblRent" alignment="CENTER" onMouseClicked="#openRentTab" prefHeight="32.0" prefWidth="181.0" styleClass="lbl-user" text="RENT MOVIE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="lblReturnRenew" alignment="CENTER" layoutX="237.0" onMouseClicked="#openReturnRenewTab" prefHeight="32.0" prefWidth="181.0" styleClass="lbl-user" text="RETURN/RENEW">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Label fx:id="lblStatus" alignment="CENTER" layoutY="-1.0" prefHeight="32.0" prefWidth="205.0" styleClass="lbl-status" text="RENT MOVIE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <TabPane fx:id="tabPane" prefHeight="426.0" prefWidth="783.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabRent" text="Rent Movie">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox alignment="CENTER" layoutX="292.0" layoutY="148.0" prefHeight="397.0" prefWidth="832.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="357.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #7B1FA2;">
+                                       <children>
+                                          <HBox prefHeight="61.0" prefWidth="349.0">
+                                             <children>
+                                                <Button fx:id="movieListBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#showMovieList" prefHeight="40.0" prefWidth="50.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="34.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../Icons/list.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                                <TextField fx:id="movieIdTf" alignment="TOP_LEFT" onAction="#showMovieDetails" prefHeight="25.0" prefWidth="155.0" promptText="Insert Movie ID">
+                                                   <HBox.margin>
+                                                      <Insets left="40.0" right="10.0" top="30.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Button fx:id="showMovieBtn" mnemonicParsing="false" onAction="#showMovieDetails" prefHeight="25.0" prefWidth="55.0" text="Show">
+                                                   <HBox.margin>
+                                                      <Insets right="40.0" top="30.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Text fx:id="titleTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie Title" textAlignment="CENTER" wrappingWidth="399.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text fx:id="actorTxt" layoutX="10.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actor" textAlignment="CENTER" wrappingWidth="399.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="directorTxt" layoutX="10.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Director" textAlignment="CENTER" wrappingWidth="395.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="genreTxt" layoutX="10.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" textAlignment="CENTER" wrappingWidth="395.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="statusTxt" layoutX="10.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="396.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Button fx:id="rentBtn" contentDisplay="TOP" disable="true" mnemonicParsing="false" onAction="#rentMovieToMember" prefHeight="75.0" prefWidth="66.0" text="Rent">
+                                             <VBox.margin>
+                                                <Insets top="100.0" />
+                                             </VBox.margin>
+                                             <graphic>
+                                                <ImageView fitHeight="39.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../Icons/double-angle-pointing-to-right.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="357.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #7B1FA2;">
+                                       <children>
+                                          <HBox prefHeight="61.0" prefWidth="349.0">
+                                             <children>
+                                                <Button fx:id="memberListBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#showMemberList" prefHeight="40.0" prefWidth="50.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="32.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../../../Icons/list-with-possible-workers-to-choose.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                                <TextField fx:id="memberIdTf" alignment="TOP_LEFT" onAction="#showMemberDetails" prefHeight="25.0" prefWidth="155.0" promptText="Insert Member ID">
+                                                   <HBox.margin>
+                                                      <Insets left="40.0" right="10.0" top="30.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Button fx:id="showMemberBtn" mnemonicParsing="false" onAction="#showMemberDetails" prefHeight="25.0" prefWidth="55.0" text="Show">
+                                                   <HBox.margin>
+                                                      <Insets right="40.0" top="30.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Text fx:id="memberNameTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="350.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text fx:id="memberPhoneTxt" layoutX="10.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" textAlignment="CENTER" wrappingWidth="350.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="memberEmail" layoutX="10.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="350.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="memberRentedMovies" layoutX="10.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rented movies: 0" textAlignment="CENTER" wrappingWidth="350.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="memberTotalCosts" layoutX="10.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Costs: 0" textAlignment="CENTER" wrappingWidth="350.13671875">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabReturnRenew" text="Return/Renew">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="397.0" prefWidth="1022.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <HBox alignment="CENTER" prefHeight="71.0" prefWidth="934.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="returnMovieIdTf" onAction="#showRentInfo" prefHeight="25.0" prefWidth="176.0" promptText="Insert Movid ID">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" onAction="#showRentInfo" text="Show">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </top>
+                                 <center>
+                                    <HBox alignment="CENTER" prefHeight="321.0" prefWidth="934.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="214.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #7B1FA2;">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" top="20.0" />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rent Info" textAlignment="CENTER" underline="true" wrappingWidth="180.13671875">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text fx:id="dateAndTimeTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Date and time" textAlignment="CENTER" wrappingWidth="311.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text fx:id="renewTxt" layoutX="90.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Renew count: 0" textAlignment="CENTER" wrappingWidth="309.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="TOP_CENTER" prefHeight="214.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #7B1FA2;">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Movie Info" textAlignment="CENTER" underline="true" wrappingWidth="180.13671875">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text fx:id="retId" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie id" textAlignment="CENTER" wrappingWidth="315.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="retTitle" layoutX="90.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" textAlignment="CENTER" wrappingWidth="321.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="retActor" layoutX="90.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actor" textAlignment="CENTER" wrappingWidth="314.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="retDirector" layoutX="90.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Director" textAlignment="CENTER" wrappingWidth="318.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="retGenre" layoutX="90.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" textAlignment="CENTER" wrappingWidth="317.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="TOP_CENTER" prefHeight="214.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #7B1FA2;">
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" top="20.0" />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Member Info" textAlignment="CENTER" underline="true" wrappingWidth="180.13671875">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text fx:id="retMemberId" strokeType="OUTSIDE" strokeWidth="0.0" text="Member ID" textAlignment="CENTER" wrappingWidth="310.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="retName" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="314.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="retPhone" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" textAlignment="CENTER" wrappingWidth="313.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="retEmail" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" textAlignment="CENTER" wrappingWidth="312.1484375">
+                                                   <font>
+                                                      <Font name="System Italic" size="16.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </center>
+                                 <bottom>
+                                    <HBox alignment="CENTER" prefHeight="72.0" prefWidth="934.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="renewBtn" disable="true" mnemonicParsing="false" onAction="#handleRenew" prefHeight="25.0" prefWidth="60.0" text="Renew">
+                                             <HBox.margin>
+                                                <Insets right="35.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="returnBtn" disable="true" mnemonicParsing="false" onAction="#handleReturn" prefHeight="25.0" prefWidth="60.0" text="Return">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </bottom>
+                              </BorderPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
